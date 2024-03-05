@@ -1,0 +1,15 @@
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.game-board {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 10px; 
+  width: 300px; 
+  margin: auto;
+}

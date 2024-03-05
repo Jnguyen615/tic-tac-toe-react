@@ -1,0 +1,15 @@
+.board-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px;
+}
+
+.boxes {
+  border: 1px solid #d116b5; 
+  padding: 20px; 
+  text-align: center;
+  font-size: 24px;
+}
+.boxes:hover {
+  background-color: pink
+}
