@@ -2,8 +2,21 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url('../../Images/castle 1.jpeg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200vh;
+  z-index: 0;
 }
+
+
+// .PlayerOne,
+// .PlayerTwo {
+//   flex: 1; /* Equal width for PlayerOne and PlayerTwo */
+// }
 
 .game-board {
   display: grid;
@@ -12,4 +25,5 @@
   grid-gap: 10px; 
   width: 300px; 
   margin: auto;
+  z-index: 1;
 }

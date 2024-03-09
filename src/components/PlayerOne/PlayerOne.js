@@ -1,11 +1,11 @@
 import './PlayerOne.scss'
 
-const PlayerOne = () => {
+const PlayerOne = ( {score} ) => {
   return (
     <main className='player-one'>
       <h2>Player 1</h2>
-      <p>🏰</p>
-      <p className='score'>Score: </p>
+      <p className='token'>🏰</p>
+      <p className='score'>Score: {score} </p>
     </main>
   )
 }

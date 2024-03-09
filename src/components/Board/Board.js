@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Board.scss'
-import { useState, useEffect } from 'react'
 
-const Board = ({ gameBoard }) => {
+const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
   const [gameState, setGameState] = useState(gameBoard);
   const [currentToken, setCurrentToken] = useState('🏰');
-  const [winner, setWinner ] = useState(null)
-  const [winningMessage, setWinningMessage] = useState('')
-
+  const [winner, setWinner] = useState(null);
+  const [winningMessage, setWinningMessage] = useState('');
 
   useEffect(() => {
     checkWinner();
-  }, [gameState, winner]);
+  }, [gameState]);
 
   const handleBoxClick = (index) => {
     if (!gameState[index] && !winner) {  
@@ -22,11 +20,8 @@ const Board = ({ gameBoard }) => {
         return newGameState;
       });
     }
+    onTokenPlaced()
   };
-  
-  useEffect(() => {
-    checkWinner();
-  }, [gameState, winner]);
   
   const checkWinner = () => {
     const winningCombinations = [
@@ -48,9 +43,15 @@ const Board = ({ gameBoard }) => {
       const winningPlayer = gameState[winningCombination[0]];
       setWinner(winningPlayer);
       setWinningMessage(`Player ${winningPlayer} wins!`);
+      onWin(winningPlayer);
     }
   };
   
+  const resetGame = () => {
+    setGameState(gameBoard);
+    setWinner(null);
+    setWinningMessage('');
+  };
   
   return (
     <div>
@@ -62,9 +63,9 @@ const Board = ({ gameBoard }) => {
         ))}
       </div>
       {winningMessage && <p>{winningMessage}</p>}
+      <button className='next-game-btn' onClick={resetGame}>Next Game</button>
     </div>
   );
 };
 
 export default Board;
-
