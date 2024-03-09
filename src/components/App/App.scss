@@ -1,29 +1,50 @@
+*{
+  font-family: 'Sofia', cursive;
+}
+
 .App {
   display: flex;
   align-items: center;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
   background-image: url('../../Images/castle 1.jpeg'); 
   background-repeat: no-repeat;
   background-size: cover;
-  height: 200vh;
-  z-index: 0;
+  height: 100vh;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  width: 85%;
 }
 
+.player-one-box {
+  margin-right: 4%;
+  text-align: center;
+}
 
-// .PlayerOne,
-// .PlayerTwo {
-//   flex: 1; /* Equal width for PlayerOne and PlayerTwo */
-// }
+.player-two-box {
+  margin-left: 5%;
+  text-align: center;
+}
+
+.PlayerOne,
+.PlayerTwo {
+  flex: 1;
+  text-align: center;
+  color: white; 
+}
 
 .game-board {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr); 
   grid-gap: 10px; 
-  width: 300px; 
-  margin: auto;
+  width: 10px; 
+  margin-left: -5%;
   z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7); 
+  box-sizing: border-box;
+}
+
+.turn {
+  text-align: center;
+  font-size: 1.5em;
 }

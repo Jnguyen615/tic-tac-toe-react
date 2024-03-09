@@ -1,11 +1,18 @@
-.players {
-  margin-bottom: 72%;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .token {
   font-size: 5em;
-  margin: 0;
+  // margin: 0;
+}
+
+.player-one, player-two {
+  text-align: center;
+}
+
+h2 {
+  display: flex;
+  font-family: 'Sofia', cursive;
+
+}
+
+.score {
+  font-size: 1.5em;
 }

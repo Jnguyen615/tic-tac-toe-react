@@ -6,7 +6,6 @@
 
 .boxes {
   border: 1px solid #d116b5; 
-  padding: 15px; 
   text-align: center;
   font-size: 24px;
   height: 100px;
@@ -15,4 +14,28 @@
 
 .boxes:hover {
   background-color: pink
+}
+
+.next-game-btn {
+  background-color: #f196df;
+    color: white;
+    border: 2px solid #f2a8e0;
+    /* padding: 10px 15px; */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: 35%;
+    margin-top: 5%;
+
+}
+
+.next-game-btn:hover {
+  background-color: #ee28ca; 
 }

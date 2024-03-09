@@ -22,16 +22,14 @@ import { useState } from 'react';
 //       } else {
 //         updatedScores = prevScores;
 //       }
-      
+
 //       return updatedScores;
 //     });
 //   };
-  
+
 //   const switchTurn = () => {
 //     setCurrentPlayer((prevPlayer) => (prevPlayer === '🏰' ? '👑' : '🏰'));
 //   };
-  
-
 
 //   return (
 //     <main>
@@ -55,8 +53,8 @@ function App() {
   const [currentPlayer, setCurrentPlayer] = useState('🏰');
   const gameBoard = ['', '', '', '', '', '', '', '', ''];
 
-  const handleWin = (winningPlayer) => {
-    setScores((prevScores) => {
+  const handleWin = winningPlayer => {
+    setScores(prevScores => {
       let updatedScores;
 
       if (winningPlayer === '🏰') {
@@ -72,22 +70,31 @@ function App() {
   };
 
   const switchTurn = () => {
-    setCurrentPlayer((prevPlayer) => (prevPlayer === '🏰' ? '👑' : '🏰'));
+    setCurrentPlayer(prevPlayer => (prevPlayer === '🏰' ? '👑' : '🏰'));
   };
 
   const handleTokenPlaced = () => {
-    // Switch turn immediately after a token is placed
     switchTurn();
   };
 
   return (
     <main>
       <div className='App'>
-        <PlayerOne className='playerOne' score={scores.playerOne} />
-        <Header />
-        <p>It's {currentPlayer === '🏰' ? '🏰' : '👑'}'s turn!</p>
-        <Board gameBoard={gameBoard} onWin={handleWin} onTokenPlaced={handleTokenPlaced} />
-        <PlayerTwo className='playerTwo' score={scores.playerTwo} />
+        <div className='player-one-box'>
+          <PlayerOne className='playerOne' score={scores.playerOne} />
+        </div>
+        <div className='header'>
+          <Header />
+          <p className='turn'>It's {currentPlayer === '🏰' ? '🏰' : '👑'}'s turn!</p>
+          <Board
+            gameBoard={gameBoard}
+            onWin={handleWin}
+            onTokenPlaced={handleTokenPlaced}
+          />
+        </div>
+        <div className='player-two-box'>
+          <PlayerTwo className='playerTwo' score={scores.playerTwo} />
+        </div>
       </div>
     </main>
   );
