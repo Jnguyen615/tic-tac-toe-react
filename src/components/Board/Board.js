@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Board.scss'
+import './Board.scss';
 
 const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
   const [gameState, setGameState] = useState(gameBoard);
@@ -12,17 +12,17 @@ const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
   }, [gameState]);
 
   const handleBoxClick = (index) => {
-    if (!gameState[index] && !winner) {  
+    if (!gameState[index] && !winner) {
       setGameState((prevGameState) => {
         const newGameState = [...prevGameState];
         newGameState[index] = currentToken;
         setCurrentToken(currentToken === '🏰' ? '👑' : '🏰');
         return newGameState;
       });
+      onTokenPlaced();
     }
-    onTokenPlaced()
   };
-  
+
   const checkWinner = () => {
     const winningCombinations = [
       [0, 1, 2],
@@ -34,11 +34,11 @@ const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
       [0, 4, 8],
       [2, 4, 6],
     ];
-  
+
     const winningCombination = winningCombinations.find((combination) =>
       combination.every((index) => gameState[index] === gameState[combination[0]] && gameState[index])
     );
-  
+
     if (winningCombination) {
       const winningPlayer = gameState[winningCombination[0]];
       setWinner(winningPlayer);
@@ -46,13 +46,13 @@ const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
       onWin(winningPlayer);
     }
   };
-  
+
   const resetGame = () => {
     setGameState(gameBoard);
     setWinner(null);
     setWinningMessage('');
   };
-  
+
   return (
     <div>
       <div className="board-container">
@@ -62,7 +62,11 @@ const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
           </button>
         ))}
       </div>
-      {winningMessage && <p>{winningMessage}</p>}
+      {winner ? (
+        <p className='winning-message'>{winningMessage}</p>
+      ) : (
+        <p className='turn-message'>It's {currentToken === '🏰' ? '🏰' : '👑'}'s turn!</p>
+      )}
       <button className='next-game-btn' onClick={resetGame}>Next Game</button>
     </div>
   );
