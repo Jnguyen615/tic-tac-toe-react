@@ -8,7 +8,7 @@
 <img src="https://img.shields.io/badge/VSCode-6a0dad?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"/>
 <img src="https://img.shields.io/badge/Sass-6a0dad?style=for-the-badge&logo=sass&logoColor=white"/>
 </div>
-### 📚 Table of Contents
+<h2>📚 Table of Contents </h2> 
 
 - [Overview](#overview)
 - [Preview](#preview)
