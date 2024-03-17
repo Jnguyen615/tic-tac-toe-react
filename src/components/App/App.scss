@@ -18,11 +18,13 @@
 .player-one-box {
   margin-right: 4%;
   text-align: center;
+  font-size: 10px;
 }
 
 .player-two-box {
   margin-left: 5%;
   text-align: center;
+  font-size: 10px;
 }
 
 .PlayerOne,
@@ -30,6 +32,7 @@
   flex: 1;
   text-align: center;
   color: white; 
+  font-size: 10px;
 }
 
 .game-board {
@@ -63,14 +66,13 @@
 
 @media screen and (max-width: 280px) {
   .App {
-    height: 100vh;
-    width: 100vw;
+    height: 110vh;
+    width: 114vw;
   }
 }
 
 @media screen and (max-width: 430px) {
-  // .App {
-  // }
+  
   .player-one-box, .player-two-box {
     margin-left: 0;
   }

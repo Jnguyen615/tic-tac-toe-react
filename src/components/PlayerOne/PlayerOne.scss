@@ -16,12 +16,26 @@ h2 {
   font-size: 1.5em;
 }
 
+@media screen and (max-width: 430px) {
+  .token {
+    font-size: 2em;
+  }
+  .score {
+    font-size: 1.1em
+  }
+  
+}
+
 @media screen and (max-width: 375px) {
   .token {
     font-size: 2em;
   }
   .score {
     font-size: 1.1em
+  }
+
+  h2 {
+    font-size: 12px
   }
   
 }
