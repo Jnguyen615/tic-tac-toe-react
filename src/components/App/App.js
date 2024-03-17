@@ -43,7 +43,6 @@ function App() {
         </div>
         <div className='header'>
           <Header />
-          <p className='turn'>It's {currentPlayer === '🏰' ? '🏰' : '👑'}'s turn!</p>
           <Board
             gameBoard={gameBoard}
             onWin={handleWin}

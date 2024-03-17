@@ -33,7 +33,6 @@
     text-align: center;
     margin-left: 35%;
     margin-top: 5%;
-
 }
 
 .next-game-btn:hover {
@@ -43,4 +42,42 @@
 .winning-message {
    font-size: 2em;
    text-align: center;
+}
+
+.turn-message {
+  font-size: 2em;
+  text-align: center;
+}
+
+@media screen and (min-width: 375px) {
+  .boxes {
+    height: 50px;
+    width: 50px 
+  }
+  .turn-message {
+    font-size: 1.5em;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .boxes {
+    height: 50px;
+    width: 50px 
+  }
+  .turn-message {
+    font-size: 1.5em;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .boxes {
+    height: 40px;
+    width: 40px 
+  }
+  .turn-message {
+    font-size: 1.5em;
+    text-align: center;
+  }
 }

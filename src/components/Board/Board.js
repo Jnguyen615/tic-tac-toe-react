@@ -55,6 +55,11 @@ const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
 
   return (
     <div>
+        {winner ? (
+          <p className='winning-message'>{winningMessage}</p>
+        ) : (
+          <p className='turn-message'>It's {currentToken === '🏰' ? '🏰' : '👑'}'s turn!</p>
+        )}
       <div className="board-container">
         {gameState.map((box, index) => (
           <button key={index} className="boxes" id={`${index}`} onClick={() => handleBoxClick(index)}>
@@ -62,11 +67,6 @@ const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
           </button>
         ))}
       </div>
-      {winner ? (
-        <p className='winning-message'>{winningMessage}</p>
-      ) : (
-        <p className='turn-message'>It's {currentToken === '🏰' ? '🏰' : '👑'}'s turn!</p>
-      )}
       <button className='next-game-btn' onClick={resetGame}>Next Game</button>
     </div>
   );
