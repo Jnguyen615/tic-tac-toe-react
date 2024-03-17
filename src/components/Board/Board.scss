@@ -49,22 +49,12 @@
   text-align: center;
 }
 
-@media screen and (min-width: 375px) {
-  .boxes {
-    height: 50px;
-    width: 50px ;
-    font-size: 15px
-  }
-  .turn-message {
-    font-size: 1.5em;
-    text-align: center;
-  }
-}
 
 @media screen and (max-width: 360px) {
   .boxes {
     height: 50px;
-    width: 50px 
+    width: 50px;
+    font-size: 10px
   }
   .turn-message {
     font-size: 1.5em;
@@ -81,5 +71,12 @@
   .turn-message {
     font-size: 1.5em;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .boxes {
+    height: 40px;
+    width: 40px;
   }
 }

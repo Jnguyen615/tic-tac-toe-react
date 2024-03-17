@@ -35,6 +35,12 @@ function App() {
     switchTurn();
   };
 
+  const checkForDraw = () => {
+    if(!gameBoard === '') {
+      
+    }
+  }
+
   return (
     <main>
       <div className='App'>

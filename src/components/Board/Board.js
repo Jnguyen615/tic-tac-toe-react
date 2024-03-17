@@ -8,7 +8,8 @@ const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
   const [winningMessage, setWinningMessage] = useState('');
 
   useEffect(() => {
-    checkWinner();
+    checkForDraw();
+    checkWinner()
   }, [gameState]);
 
   const handleBoxClick = (index) => {
@@ -44,6 +45,13 @@ const Board = ({ gameBoard, onWin, onTokenPlaced }) => {
       setWinner(winningPlayer);
       setWinningMessage(`Player ${winningPlayer} wins!`);
       onWin(winningPlayer);
+    }
+  };
+  const checkForDraw = () => {
+    const isBoardFull = gameState.every(cell => cell !== '');
+    if (isBoardFull && !winner) {
+      setWinner('Draw')
+      setWinningMessage(`It's a draw!`);
     }
   };
 
