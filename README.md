@@ -38,4 +38,4 @@
 
 - Making the page persist on refresh, so the score still stays
 
-- Making the application responsive across all screen sizes
+
